@@ -27,6 +27,7 @@ class MusicRepository(
     being capable of handling offline music playback
      */
 
+    // TODO: better handling of errors
     suspend fun getTrackList(type: String?): TrackList {
         val serviceResponse = apiService.getTrackList(type)
 

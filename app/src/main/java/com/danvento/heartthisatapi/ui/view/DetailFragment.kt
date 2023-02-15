@@ -1,14 +1,11 @@
 package com.danvento.heartthisatapi.ui.view
 
-import android.media.AudioAttributes
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.danvento.heartthisatapi.R
+import androidx.fragment.app.Fragment
 import com.danvento.heartthisatapi.databinding.FragmentDetailBinding
 import com.danvento.heartthisatapi.ui.adapter.ArtistSongsAdapter
 import com.danvento.heartthisatapi.ui.viewmodel.DetailFragmentViewModel

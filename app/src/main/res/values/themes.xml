@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.HeartThisAtAPI" parent="Base.Theme.HeartThisAtAPI" />
+    <!-- TODO for professional results and better care of users, a SplashScreen should be added -->
 </resources>

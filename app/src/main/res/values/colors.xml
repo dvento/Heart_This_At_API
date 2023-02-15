@@ -3,3 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>
+
+<!-- TODO it'd be nice to have a color palette -->

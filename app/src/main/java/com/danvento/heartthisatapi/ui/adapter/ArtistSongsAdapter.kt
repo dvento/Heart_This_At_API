@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.danvento.heartthisatapi.data.model.ArtistSong
 import com.danvento.heartthisatapi.databinding.SongListItemBinding
-import java.util.*
 
 class ArtistSongsAdapter(
     private val mediaUrlCallback: ((String) -> Unit)
@@ -28,6 +27,8 @@ class ArtistSongsAdapter(
         holder.binding.apply {
             songItemTitleTv.text = song.title
             songItemDurationTv.text = getFormattedDuration(song.duration)
+            songItemDescriptionTv.text = song.description
+            songItemGenreTv.text = song.genre
             Glide.with(root.context).load(song.artworkUrl).into(songItemIv)
         }
 

@@ -114,7 +114,7 @@ class TrackList : ArrayList<TrackList.Track>(){
     }
 }
 
-
+// Convert raw response to clean, view-understandable list
 fun TrackList.toArtistList(): List<PopularArtist> {
     return groupBy { it.userId }.map { PopularArtist(
         it.value[0].user?.username ?: "",
@@ -125,6 +125,7 @@ fun TrackList.toArtistList(): List<PopularArtist> {
     ) }
 }
 
+// Convert raw response to clean, view-understandable list
 fun TrackList.toSongList(): List<ArtistSong> {
     return map { ArtistSong(
         it.title ?: "Unknown",

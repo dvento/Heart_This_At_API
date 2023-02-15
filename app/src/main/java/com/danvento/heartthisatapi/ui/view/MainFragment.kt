@@ -1,16 +1,13 @@
 package com.danvento.heartthisatapi.ui.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.danvento.heartthisatapi.R
+import androidx.fragment.app.Fragment
 import com.danvento.heartthisatapi.databinding.FragmentMainBinding
 import com.danvento.heartthisatapi.ui.adapter.TopArtistsAdapter
 import com.danvento.heartthisatapi.ui.viewmodel.MainFragmentViewModel
-import kotlinx.coroutines.processNextEventInCurrentThread
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
@@ -43,14 +40,16 @@ class MainFragment : Fragment() {
 
         viewModel.getArtists()
 
-//        binding.mainFragmentSwipeRefresh.isRefreshing = true
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.mainFragmentSwipeRefresh.setOnRefreshListener {
-            viewModel.getArtists()
+        binding.apply {
+            mainFragmentSwipeRefresh.isRefreshing = true
+            mainFragmentSwipeRefresh.setOnRefreshListener {
+                viewModel.getArtists()
+            }
         }
 
         viewModel.artistsModel.observe(viewLifecycleOwner) {
