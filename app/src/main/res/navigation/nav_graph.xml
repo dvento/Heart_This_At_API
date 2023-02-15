@@ -7,22 +7,26 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.danvento.heartthisatapi.MainFragment"
-        android:label="@string/first_fragment_label"
+        android:name="com.danvento.heartthisatapi.ui.view.MainFragment"
+        android:label="@string/topArtists"
         tools:layout="@layout/fragment_main">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/DetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.danvento.heartthisatapi.DetailFragment"
-        android:label="@string/second_fragment_label"
+        android:id="@+id/DetailFragment"
+        android:name="com.danvento.heartthisatapi.ui.view.DetailFragment"
+        android:label="{artistName}"
         tools:layout="@layout/fragment_detail">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+
+        <argument
+            android:name="artistName"
+            app:argType="string" />
     </fragment>
 </navigation>

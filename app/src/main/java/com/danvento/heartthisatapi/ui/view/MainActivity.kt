@@ -1,15 +1,13 @@
-package com.danvento.heartthisatapi
+package com.danvento.heartthisatapi.ui.view
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
+import com.danvento.heartthisatapi.R
 import com.danvento.heartthisatapi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -30,8 +28,15 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
     }
+
+    /**
+    The Media player should be set up here and not in [com.danvento.heartthisatapi.ui.view.DetailFragment],
+    So we have control over it in all screens.
+    For now, the player keeps working even if you leave the fragment,
+    but you won't be able to control it.
+    It'll just work until a new song is played
+     */
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)

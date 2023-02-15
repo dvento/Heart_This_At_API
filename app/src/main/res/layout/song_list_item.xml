@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/songItem_cc"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp">
+
+
+    <ImageView
+        android:id="@+id/songItem_iv"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/avatarContentDesc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/songItem_titleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/songItem_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Baz Hay - Exceedingly Good Old Skool Beats Vol 303" />
+
+    <TextView
+        android:id="@+id/songItem_durationTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@id/songItem_iv"
+        app:layout_constraintTop_toBottomOf="@id/songItem_titleTv"
+        tools:text="20m" />
+
+    <TextView
+        android:id="@+id/songItem_genreTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@id/songItem_durationTv"
+        app:layout_constraintTop_toBottomOf="@id/songItem_titleTv"
+        tools:text="Dance" />
+
+    <TextView
+        android:id="@+id/songItem_descriptionTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:drawablePadding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/songItem_iv"
+        app:layout_constraintTop_toBottomOf="@id/songItem_durationTv"
+        tools:text="An hour and 55 minutes of the very best in Dance music, mixed on a Pioneer XDJ-XZ for your entertainment.  Enjoy!  :)" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

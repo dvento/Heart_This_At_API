@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/artistItem_cc"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="10dp">
+
+    <ImageView
+        android:id="@+id/artistItem_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/avatarContentDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/artistItem_nameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/artistItem_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="The Ramones" />
+
+    <TextView
+        android:id="@+id/artistItem_playbackCountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:drawablePadding="5dp"
+        android:textSize="20sp"
+        app:drawableStartCompat="@drawable/ic_round_play_circle_24"
+        app:layout_constraintBottom_toBottomOf="@id/artistItem_iv"
+        app:layout_constraintStart_toEndOf="@id/artistItem_iv"
+        tools:text="20" />
+
+    <TextView
+        android:id="@+id/artistItem_favCountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:drawablePadding="5dp"
+        android:textSize="20sp"
+        app:drawableStartCompat="@drawable/ic_round_favorite_24"
+        app:layout_constraintBottom_toBottomOf="@id/artistItem_iv"
+        app:layout_constraintStart_toEndOf="@id/artistItem_playbackCountTv"
+        tools:text="20" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
