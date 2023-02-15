@@ -3,7 +3,7 @@
 ### Description
 Retrieve popular artists from a single endpoint and show them in a list view.
 Some transformations and data processing are needed to meet the user
-requirements, such as grouping and shorting the songs by artist, 
+requirements, such as grouping and sorting the songs by artist, 
 getting the listen and fav count, etc.
 
 ### Tech stack used
