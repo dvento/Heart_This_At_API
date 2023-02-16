@@ -2,11 +2,8 @@ package com.danvento.heartthisatapi.data
 
 import android.util.Log
 import com.danvento.heartthisatapi.data.model.ApiResponse
-import com.danvento.heartthisatapi.data.model.TrackList
-import com.danvento.heartthisatapi.data.network.HeartThisApiClient
+import com.danvento.heartthisatapi.data.model.Track
 import com.danvento.heartthisatapi.data.network.HeartThisApiService
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 /*
  For a more complex use of the API, we could build
@@ -28,25 +25,25 @@ class MusicRepository(
      */
 
     // TODO: better handling of errors
-    suspend fun getTrackList(type: String?): TrackList {
+    suspend fun getTrackList(type: String?): List<Track> {
         val serviceResponse = apiService.getTrackList(type)
 
         return manageResponse(serviceResponse)
     }
 
-    suspend fun getArtistData(artistId: String, type: String?): TrackList {
+    suspend fun getArtistData(artistId: String, type: String?): List<Track> {
         val serviceResponse = apiService.getArtistData(artistId, type)
 
         return manageResponse(serviceResponse)
     }
 
 
-    private fun manageResponse(response: ApiResponse<TrackList>) : TrackList {
+    private fun manageResponse(response: ApiResponse<List<Track>>): List<Track> {
         return if (response.data != null) {
             response.data
         } else {
             Log.e(TAG, response.message!!)
-            TrackList()
+            emptyList()
         }
     }
 }

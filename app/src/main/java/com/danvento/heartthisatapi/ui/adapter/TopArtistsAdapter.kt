@@ -30,7 +30,7 @@ class TopArtistsAdapter:
             artistItemNameTv.text = artist.name
             artistItemPlaybackCountTv.text = artist.playbackCount.toString()
             artistItemFavCountTv.text = artist.favCount.toString()
-            Glide.with(root.context).load(artist.avatarUrl).into(artistItemIv)
+            Glide.with(root.context).load(artist.avatarUrl).circleCrop().into(artistItemIv)
         }
 
     }

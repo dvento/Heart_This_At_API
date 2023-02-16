@@ -1,7 +1,7 @@
 package com.danvento.heartthisatapi.data.network
 
 import com.danvento.heartthisatapi.data.model.ApiResponse
-import com.danvento.heartthisatapi.data.model.TrackList
+import com.danvento.heartthisatapi.data.model.Track
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -20,7 +20,7 @@ class HeartThisApiService(
      */
 
 
-    suspend fun getTrackList(type: String?): ApiResponse<TrackList> {
+    suspend fun getTrackList(type: String?): ApiResponse<List<Track>> {
         return withContext(Dispatchers.IO) {
             try {
                 val response = heartThisApiClient.getFeed(type)
@@ -36,7 +36,7 @@ class HeartThisApiService(
         }
     }
 
-    suspend fun getArtistData(artistId: String, type: String?): ApiResponse<TrackList> {
+    suspend fun getArtistData(artistId: String, type: String?): ApiResponse<List<Track>> {
         return withContext(Dispatchers.IO) {
             try {
                 val response = heartThisApiClient.getArtistData(artistId, type)

@@ -2,7 +2,7 @@ package com.danvento.heartthisatapi.data.model
 import com.google.gson.annotations.SerializedName
 
 
-class TrackList : ArrayList<TrackList.Track>(){
+
     data class Track(
         @SerializedName("artwork_url")
         val artworkUrl: String? = null,
@@ -112,10 +112,10 @@ class TrackList : ArrayList<TrackList.Track>(){
             val username: String? = null
         )
     }
-}
+
 
 // Convert raw response to clean, view-understandable list
-fun TrackList.toArtistList(): List<PopularArtist> {
+fun List<Track>.toArtistList(): List<PopularArtist> {
     return groupBy { it.userId }.map { PopularArtist(
         it.value[0].user?.username ?: "",
         it.value[0].user?.permalink ?: "",
@@ -126,7 +126,7 @@ fun TrackList.toArtistList(): List<PopularArtist> {
 }
 
 // Convert raw response to clean, view-understandable list
-fun TrackList.toSongList(): List<ArtistSong> {
+fun List<Track>.toSongList(): List<ArtistSong> {
     return map { ArtistSong(
         it.title ?: "Unknown",
         it.artworkUrl ?: "",

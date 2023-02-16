@@ -29,7 +29,7 @@ class ArtistSongsAdapter(
             songItemDurationTv.text = getFormattedDuration(song.duration)
             songItemDescriptionTv.text = song.description
             songItemGenreTv.text = song.genre
-            Glide.with(root.context).load(song.artworkUrl).into(songItemIv)
+            Glide.with(root.context).load(song.artworkUrl).circleCrop().into(songItemIv)
         }
 
     }
